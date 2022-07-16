@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The New Chromantics</title>
+	<link rel="stylesheet" type="text/css" href="Logo/Editor_win95.css" />
+<script src="./PopEngineCommon/WebComponent_TreeView/TreeView.js" type=module></script>
+
+<style>
+	/* disable scrolling on ios
+	 https://stackoverflow.com/a/57489918/355753
+	 */
+html, body
+{
+	background-color:	#000;
+	color:		#eee;
+	width:		100vw;
+	margin:		0px;
+	padding:	0px;
+	
+	height:		-moz-available;          /* WebKit-based browsers will ignore this. */
+	height:		-webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+	height:		fill-available;
+	
+	font-family:	sans-serif;
+}
+
+a, a:active, a:visited
+{
+	color:	#fff;
+}
+
+:root
+{
+	--LogoHeight:	calc(min(70vh,100vw));
+}
+
+#Logo
+{
+	height:	var(--LogoHeight);
+	width:	100vw;
+	xbackground:blue;
+}
+
+#Content
+{
+	xmargin-top:	var(--LogoHeight);
+	text-align:		center;
+}
+
+
+tree-view
+{
+	position:absolute;
+	bottom:0px;
+	height:	10em;
+	display:block;
+	min-height:	10em;
+	min-width:10em;
+	overflow:scroll;
+}
+
+</style>
+</head>
+<body>
+	<canvas id="Logo">The New Chromantics</canvas>
+	<div id="Content">
+		<a href=mailto:hello@newchromantics.com>hello@newchromantics.com</a>
+	</div>
+	<tree-view id="Params" css="./PopEngineCommon/WebComponent_TreeView/TreeView.css"></tree-view>
+<script type=module>
+import Bootup from './Logo/Bootup.js'
+Bootup();
+</script>
+	
+	
+</body>
+
